@@ -30,11 +30,10 @@ find_witness(n)= {
     [s,d]= extract(n-1);
     a= 2;
     B= floor_extend( sqrt(n) );
-    t= a;
+    
     while(gcd(a, n) == 1,
         a= random(B-1)+2;
         until(lift(Mod(a,n)^(n-1)) == 1 && gcd(a,n) == 1, a= random(B-1)+2);
-        t= a;
         a= lift( Mod(a,n)^d);
         
         for(r=1, s-1, 
